@@ -1,10 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import axios from 'axios';
+import dotenv from 'dotenv';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from "react-redux";
 import { store } from "./store";
+
+dotenv.config();
+
+// axios.defaults.baseURL = 'http://localhost:3001';  //deploy (descomentar para trabajar en localhost)
+axios.defaults.baseURL = 'https://tvgs-backend-production.up.railway.app';  //deploy (descomentar para trabajar en deploy)
 
 ReactDOM.render(
   <Provider store={store}>
