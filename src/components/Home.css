@@ -5,30 +5,3 @@
     align-items: center;
 }
 
-.home-cards{
-    display: grid;
-    grid-template-columns: auto auto auto;
-}
-
-.button-more{
-    border: solid white 2px;
-    border-radius: 2px;
-    width: 300px;
-    height: 600px;
-    margin: 10px;
-}
-
-.button-more:hover{
-    background-color: white;
-    color: black;
-}
-
-.home-page-numbers{
-    
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    /* background-color: red; */
-
-}

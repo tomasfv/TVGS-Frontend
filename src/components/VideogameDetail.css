@@ -1,0 +1,23 @@
+.detail-title{
+    color: white;
+    font-size: 60px;
+}
+
+.platforms-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.detail-info{
+    border: solid 2px grey;
+    background-color: rgb(240, 239, 239);
+    color: black;
+    border-radius: 5px;
+    min-width: 100px;
+    max-width: 500px;
+    padding-inline: 10px;
+    height: 20px;
+    margin: 5px;
+    cursor: crosshair;
+}

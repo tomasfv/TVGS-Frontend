@@ -1,0 +1,27 @@
+.search-input{
+    background-color: rgb(44, 44, 44);
+    border: hidden;
+    border-radius: 3px;
+    height: 33px;
+    width: 200px;
+    color: white;   
+}
+
+.search-input:focus{
+    outline: none; 
+}
+
+
+.search-button{
+    border: hidden;
+    background-color: rgb(56, 56, 56);
+    transition: 0.2s ease-in-out;   
+}
+
+.search-button:active{
+    background-color: rgb(235, 232, 232);
+    color: black;
+    transform: scale(0.90);
+}
+
+

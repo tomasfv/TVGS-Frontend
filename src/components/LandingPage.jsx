@@ -6,9 +6,10 @@ export default function LandingPage(){
 
     return (
         <div>
-            <h1>Landing Page</h1>
+            <h1>Welcome to</h1>
+            <h1>THE VIDEO GAMES SHELTER</h1>
             <Link to='/Home'>
-                <button>HOME</button>
+                <button>START</button>
             </Link>
         </div>
     )

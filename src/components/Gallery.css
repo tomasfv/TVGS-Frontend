@@ -1,0 +1,53 @@
+
+.gallery-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery-middle{
+    display: flex;
+    flex-direction: row;
+}
+.gallery-cards{
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.gallery-link{
+    text-decoration: none;
+    color: white;
+}
+.button-more{
+    border: solid white 2px;
+    border-radius: 2px;
+    width: 300px;
+    height: 600px;
+    margin: 10px;
+}
+
+.button-more:hover{
+    background-color: white;
+    color: black;
+}
+
+.gallery-page-numbers{
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    /* background-color: red; */
+
+}
+
+.filter{
+    background-color: rgb(39, 39, 39);
+    color: white;
+    height: 35px;
+    width: 200px;
+    margin: 15px;
+    border:hidden;
+    border-radius: 3px;
+}
