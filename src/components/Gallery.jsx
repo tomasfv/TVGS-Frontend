@@ -79,35 +79,40 @@ export default function Gallery(){
     return (
         <div className='gallery-container'>
             
-        <div className='gallery-middle'>
+        <div className='gallery-filters'>
             <div>     
                 {/* Order */}
                 <h2>SORT</h2>
-                <h4>Title: 
+                <div className='filt-container'>
+                <h4 className='filt-name'>Title</h4> 
                 <select className='filter' onChange={e => handleSortName(e)}>
                     <option value='default'> - </option>
                     <option value='asc'>A → Z</option>
                     <option value='desc'>Z → A</option>
                 </select>
-                </h4>
-                <h4>Rating: 
+                </div>
+                <div className='filt-container'>
+                <h4 className='filt-name'>Rating</h4>
                 <select className='filter' onChange={ e => handleSortRating(e)}>
                     <option value='default'> - </option>
                     <option value='max'>+ RATING</option>
                     <option value='min'>- RATING</option>
                 </select>
-                </h4>
+                </div>
+                
                 {/* Filters */}
                 <h2>FILTER</h2>
-                <h4>Origin: 
+                <div className='filt-container'>
+                <h4 className='filt-name'>Origin</h4>
                 <select className='filter' onChange={e => handleOriginFilter(e)}>
                     <option value='default'> - </option>
                     <option value='all'>ALL</option>
                     <option value='created'>TVGS</option>
                     <option value='api'>RAWG</option> 
                 </select>
-                </h4>
-                <h4>Genre: 
+                </div>
+                <div className='filt-container'>
+                <h4 className='filt-name'>Genre</h4> 
                 <select className='filter' onChange={e => handleGenreFilter(e)}>
                     <option value='default'> - </option>
                     {genres.map(el => (
@@ -115,7 +120,8 @@ export default function Gallery(){
                     ))}
 
                 </select>
-                </h4>
+                </div>
+            
                 <SearchBar
                     currentPage={currentPage}
                     setCurrentPage={setCurrentPage}
@@ -123,6 +129,7 @@ export default function Gallery(){
                 <button onClick={e =>{ handleReset(e)}}>Reset Filters</button>
             </div>
             <div>
+            
             <div className='gallery-cards'>
             {   
                 currentVideogames.length > 0 ?
@@ -145,14 +152,18 @@ export default function Gallery(){
             }
             </div>
             <div className='gallery-page-numbers'>
-                <button onClick={ e => {handlePrev(e)}}>Prev</button>
+                {currentPage === 1 ?
+                    <p></p> :
+                    <button onClick={ e => {handlePrev(e)}}>Prev</button>}
                 <Pagination
                     videogamesPerPage={videogamesPerPage}
                     currentPage={currentPage}
                     allVideogames={allVideogames.length}
                     pagination={pagination}
                     />
-                <button onClick={ e => {handleNext(e)}}>Next</button>
+                {currentPage === Math.ceil(allVideogames.length/videogamesPerPage) + 1 ?
+                    <p></p> :
+                    <button onClick={ e => {handleNext(e)}}>Next</button>}
             </div>
             </div>
         </div>

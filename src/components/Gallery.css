@@ -6,13 +6,15 @@
     align-items: center;
 }
 
-.gallery-middle{
+.gallery-filters{
     display: flex;
     flex-direction: row;
 }
 .gallery-cards{
     display: grid;
     grid-template-columns: auto auto auto;
+    width: 957px;
+    
 }
 
 .gallery-link{
@@ -20,11 +22,12 @@
     color: white;
 }
 .button-more{
-    border: solid white 2px;
+    /* border: solid white 2px; */
     border-radius: 2px;
     width: 300px;
-    height: 600px;
+    height: 335px;
     margin: 10px;
+    margin-left: 325px;
 }
 
 .button-more:hover{
@@ -50,4 +53,14 @@
     margin: 15px;
     border:hidden;
     border-radius: 3px;
+}
+
+.filt-name{
+    margin-left: 0;
+}
+
+.filt-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
