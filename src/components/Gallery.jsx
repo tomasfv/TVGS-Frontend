@@ -31,7 +31,7 @@ export default function Gallery(){
         dispatch(getVideogames());
         dispatch(getGenres());
         }
-    }, [dispatch]);
+    }, [dispatch, allVideogames]);
 
     function handleReset(e){
         e.preventDefault();
@@ -137,10 +137,8 @@ export default function Gallery(){
                 currentVideogames.length > 0 ?
                 currentVideogames.map(el =>{
                     return(
-                    <Link to={"/videogames/" + el.id} key={el.id} className='home-link'
-                        currentPage={currentPage}
-                        setCurrentPage={setCurrentPage}>
-                    
+                    <Link to={"/videogames/" + el.id} key={el.id} className='home-link'>
+
                     <Card
                         key={el.id}
                         name={el.name}
