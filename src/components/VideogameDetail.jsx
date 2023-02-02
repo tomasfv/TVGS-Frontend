@@ -22,7 +22,7 @@ export default function VideogameDetail(){
         history.push('/Home');                        
     }
 
-    
+
     return (
         <div>
             <h1>VIDEO GAME DETAIL</h1>
@@ -50,7 +50,7 @@ export default function VideogameDetail(){
                         <div className="platforms-container">{detail[0].developers.map(el => <h4 className="detail-info" key={el}>{el}</h4> )}</div>
                         <h3>PUBLISHERS</h3>
                         <div className="platforms-container">{detail[0].publishers.map(el => <h4 className="detail-info" key={el}>{el}</h4>)}</div>
-                        <button className="volver" onClick={ e => handleBack(e)}>BACK</button>
+                        <button className="volver" onClick={ e => handleBack(e)}>Home</button>
                         
                     </div> : <h1>Loading...</h1>
                 }

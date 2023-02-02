@@ -1,0 +1,15 @@
+.start-landing{
+    height: 100px;
+    width: 200px;
+    font-size: 40px;
+    font-family: 'Gruppo', cursive;
+    border-radius: 3px;
+    cursor:crosshair;
+    transition: 0.5s ease-in-out;
+
+}
+
+.start-landing:hover{
+    background-color: rgb(68, 133, 68);
+    
+}

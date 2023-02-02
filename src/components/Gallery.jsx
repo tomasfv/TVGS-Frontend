@@ -137,7 +137,7 @@ export default function Gallery(){
                 currentVideogames.length > 0 ?
                 currentVideogames.map(el =>{
                     return(
-                    <Link to={"/videogames/" + el.id} key={el.id} className='home-link'>
+                    <Link to={"/videogames/" + el.id} key={el.id} className='home-link' target='_blank'>
 
                     <Card
                         key={el.id}
@@ -147,8 +147,8 @@ export default function Gallery(){
                     />
                     </Link>
                     ) 
-                })          
-                : <button className='button-more' onClick={ e => {handleMore(e)}}><h1>MORE</h1></button>
+                }): <h1>Loading...</h1>         
+                //  <button className='button-more' onClick={ e => {handleMore(e)}}><h1>MORE</h1></button>
                 
 
             }
@@ -163,8 +163,8 @@ export default function Gallery(){
                     allVideogames={allVideogames.length}
                     pagination={pagination}
                     />
-                {currentPage === Math.ceil(allVideogames.length/videogamesPerPage) + 1 ?
-                    <p></p> :
+                {currentPage === Math.ceil(allVideogames.length/videogamesPerPage)?
+                    <button onClick={ e => {handleMore(e)}} className='button-more'>More</button> :
                     <button onClick={ e => {handleNext(e)}}>Next</button>}
             </div>
             </div>
