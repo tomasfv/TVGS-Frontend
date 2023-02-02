@@ -27,8 +27,10 @@ export default function Gallery(){
 
     
     useEffect(() => {
+    if(!allVideogames[0]){
         dispatch(getVideogames());
         dispatch(getGenres());
+        }
     }, [dispatch]);
 
     function handleReset(e){
@@ -135,7 +137,9 @@ export default function Gallery(){
                 currentVideogames.length > 0 ?
                 currentVideogames.map(el =>{
                     return(
-                    <Link to={"/videogames/" + el.id} key={el.id} className='home-link'>
+                    <Link to={"/videogames/" + el.id} key={el.id} className='home-link'
+                        currentPage={currentPage}
+                        setCurrentPage={setCurrentPage}>
                     
                     <Card
                         key={el.id}

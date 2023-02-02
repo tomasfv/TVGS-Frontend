@@ -10,7 +10,7 @@ import { store } from "./store";
 
 dotenv.config();
 
-// axios.defaults.baseURL = 'http://localhost:3001';  //deploy (descomentar para trabajar en localhost)
+//axios.defaults.baseURL = 'http://localhost:3001';  //deploy (descomentar para trabajar en localhost)
 axios.defaults.baseURL = 'https://tvgs-backend-production.up.railway.app';  //deploy (descomentar para trabajar en deploy)
 
 ReactDOM.render(
