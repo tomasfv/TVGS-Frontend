@@ -137,7 +137,7 @@ export default function Gallery(){
                 currentVideogames.length > 0 ?
                 currentVideogames.map(el =>{
                     return(
-                    <Link to={"/videogames/" + el.id} key={el.id} className='home-link' target='_blank'>
+                    <Link to={"/videogames/" + el.id} key={el.id} className='home-link'>
 
                     <Card
                         key={el.id}

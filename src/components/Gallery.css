@@ -25,10 +25,12 @@
    background-color: rgb(68, 150, 68);
 }
 
-.button-more:hover{
+
+.button-more:active{
     background-color: white;
     color: black;
 }
+
 
 .gallery-page-numbers{
     
