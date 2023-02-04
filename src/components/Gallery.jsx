@@ -20,7 +20,7 @@ export default function Gallery(){
     const [/*orden*/, setOrden] = useState("");
     const indexOfLastVideogame = currentPage * videogamesPerPage;
     const indexOfFirstVideogame = indexOfLastVideogame - videogamesPerPage;
-    const currentVideogames = allVideogames.slice(indexOfFirstVideogame, indexOfLastVideogame);
+    let currentVideogames = allVideogames.slice(indexOfFirstVideogame, indexOfLastVideogame);
     const pagination = (pageNumber) => {
         setCurrentPage(pageNumber)
     };

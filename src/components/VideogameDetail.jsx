@@ -37,6 +37,7 @@ export default function VideogameDetail(){
                             <div className="grid-container">
                                 <h1 className="title-detail">{detail[0].name.toUpperCase()}</h1>
                                 <h4 className="description-detail">{detail[0].description}</h4>
+                                
                                 <div className="dev-detail">
                                     <div className="data-field">    
                                         <h3>DEVELOPERS</h3>
@@ -48,11 +49,12 @@ export default function VideogameDetail(){
                                     </div>
                                     <div className="data-field">
                                         <h3>WEBSITE</h3>
-                                        <h3><a href={detail[0].website} target="_blank" rel="noreferrer" className="detail-info">{detail[0].website}</a></h3>
+                                        <h3><a href={detail[0].website} target="_blank" rel="noreferrer" className="back-button">{detail[0].name}</a></h3>
                                     </div>
                                 </div>
                             </div>
-                                </div>
+                            </div>
+                            
                             <div className="data-container">
                                 <div className="data-field">
                                     <h3>PLATFORMS</h3>
