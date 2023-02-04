@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import {useParams, useHistory} from 'react-router-dom';
 import {useDispatch, useSelector} from "react-redux";
 import {getDetail, cleanDetail} from "../actions";
+import Carousel from "./Carousel";
 import './VideogameDetail.css';
 
 export default function VideogameDetail(){
@@ -10,6 +11,7 @@ export default function VideogameDetail(){
     const param = useParams();
     const history = useHistory();
     const detail = useSelector ((state) => state.detail);
+    
 
     useEffect(() => {
         dispatch(getDetail(param.id));                  
@@ -23,6 +25,7 @@ export default function VideogameDetail(){
         history.push('/Home');                        
     }
 
+   
 
     return (
         <div>
@@ -30,8 +33,9 @@ export default function VideogameDetail(){
                 {
                     detail.length > 0 ?
                     <div>
+                        <Carousel slides={detail[0].screenshots.concat(detail[0].image)}/>
                         {/* {detail[0].screenshots.map(el => <img src={el} alt="img not found" key={el} width="150px" height="75px" />)} */}
-                        <img src={detail[0].image} alt="img not found" width="750px" height="500px"/>
+                        {/* <img src={detail[0].image} alt="img not found" width="750px" height="500px"/> */}
                         <div className="details-container">
                             <div>
                             <div className="grid-container">

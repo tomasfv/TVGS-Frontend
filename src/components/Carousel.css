@@ -1,0 +1,42 @@
+.slider-container{
+    position: relative;
+    height: 100%;
+}
+.img-carousel{
+    width: 750px;
+    height: 500px;
+}
+
+.right-arrow-carousel{
+    position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  right: 32px;
+  font-size: 45px;
+  color: #fff;
+  z-index: 1;
+  cursor: pointer;  
+
+}
+
+.left-arrow-carousel{
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    left: 32px;
+    font-size: 45px;
+    color: #fff;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.dots-container-carousel{
+    display: flex;
+    justify-content: center;
+  };
+  
+.dots-carousel{
+    margin: 0 3px;
+    cursor: pointer;
+    font-size: 20px;
+  };
