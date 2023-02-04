@@ -1,6 +1,12 @@
 import { useState } from "react";
 import './Carousel.css'
 
+const dotStyle = {
+    margin: "0 3px",
+    cursor: "pointer",
+    fontSize: "20px",
+    
+  };
 
 export default function Carousel({ slides }){
   const [currentIndex, setCurrentIndex] = useState(slides.length-1);
@@ -35,9 +41,9 @@ export default function Carousel({ slides }){
       </div>
       
       <div className="dots-container-carousel">
-        {slides.map((slide, slideIndex) => (
+        {slides.map((slides, slideIndex) => (
           <div
-            className="dots-carousel"
+            style={dotStyle}
             key={slideIndex}
             onClick={() => goToSlide(slideIndex)}
           >
