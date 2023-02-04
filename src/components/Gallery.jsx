@@ -147,12 +147,13 @@ export default function Gallery(){
                     />
                     </Link>
                     ) 
-                }): <h1>Loading...</h1>         
+                }): <span className="loader"></span>        
                 //  <button className='button-more' onClick={ e => {handleMore(e)}}><h1>MORE</h1></button>
                 
 
             }
             </div>
+            {currentVideogames.length > 0 ?
             <div className='gallery-page-numbers'>
                 {currentPage === 1 ?
                     <p></p> :
@@ -166,7 +167,7 @@ export default function Gallery(){
                 {currentPage === Math.ceil(allVideogames.length/videogamesPerPage)?
                     <button onClick={ e => {handleMore(e)}} className='button-more'>More</button> :
                     <button onClick={ e => {handleNext(e)}}>Next</button>}
-            </div>
+            </div> : <p></p> }
             </div>
         </div>
             

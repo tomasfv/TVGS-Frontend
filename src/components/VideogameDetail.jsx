@@ -14,7 +14,8 @@ export default function VideogameDetail(){
     useEffect(() => {
         dispatch(getDetail(param.id));                  
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [dispatch])
+        return () => dispatch(cleanDetail());                         //Component WillUnmount
+    }, [dispatch, param.id])
 
     function handleBack(e){
         e.preventDefault();
@@ -25,34 +26,58 @@ export default function VideogameDetail(){
 
     return (
         <div>
-            <h1>VIDEO GAME DETAIL</h1>
-            
             <div>
                 {
                     detail.length > 0 ?
                     <div>
-                        <h1 className="detail-title">{detail[0].name.toUpperCase()}</h1>
-                        {detail[0].screenshots.map(el => <img src={el} alt="img not found" key={el} width="150px" height="75px" />)}
+                        {/* {detail[0].screenshots.map(el => <img src={el} alt="img not found" key={el} width="150px" height="75px" />)} */}
                         <img src={detail[0].image} alt="img not found" width="750px" height="500px"/>
-                        <h4>{detail[0].description}</h4>
-                        <h3>Release Date: {detail[0].released}</h3>
-                        <h3>Rating: {detail[0].rating} / 5</h3>
-                        <h3>ID: {detail[0].id}</h3>
-                        <a href={detail[0].website} target="_blank" rel="noreferrer"><h3>Website: {detail[0].website}</h3></a>
-                        
-                        <h3>PLATFORMS</h3>
-                        <div className="platforms-container">{detail[0].platforms.map(el => <h4 className="detail-info" key={el}>{el}</h4>)}</div>
-                        <h3>STORES</h3>
-                        <div className="platforms-container">{detail[0].stores.map(el => <h4 className="detail-info" key={el}>{el}</h4>)}</div>
-                        <h3>GENRES</h3>
-                        <div className="platforms-container">{detail[0].genres.map(el => <h4 className="detail-info" key={el}>{el}</h4>)}</div>
-                        <h3>DEVELOPERS</h3>
-                        <div className="platforms-container">{detail[0].developers.map(el => <h4 className="detail-info" key={el}>{el}</h4> )}</div>
-                        <h3>PUBLISHERS</h3>
-                        <div className="platforms-container">{detail[0].publishers.map(el => <h4 className="detail-info" key={el}>{el}</h4>)}</div>
-                        <button className="volver" onClick={ e => handleBack(e)}>Home</button>
-                        
-                    </div> : <h1>Loading...</h1>
+                        <div className="details-container">
+                            <div>
+                            <div className="grid-container">
+                                <h1 className="title-detail">{detail[0].name.toUpperCase()}</h1>
+                                <h4 className="description-detail">{detail[0].description}</h4>
+                                <div className="dev-detail">
+                                    <div className="data-field">    
+                                        <h3>DEVELOPERS</h3>
+                                        <div className="platforms-container">{detail[0].developers.map(el => <h4 className="detail-info" key={el}>{el}</h4> )}</div>
+                                    </div>
+                                    <div className="data-field">
+                                        <h3>PUBLISHERS</h3>
+                                        <div className="platforms-container">{detail[0].publishers.map(el => <h4 className="detail-info" key={el}>{el}</h4>)}</div>
+                                    </div>
+                                    <div className="data-field">
+                                        <h3>WEBSITE</h3>
+                                        <h3><a href={detail[0].website} target="_blank" rel="noreferrer" className="detail-info">{detail[0].website}</a></h3>
+                                    </div>
+                                </div>
+                            </div>
+                                </div>
+                            <div className="data-container">
+                                <div className="data-field">
+                                    <h3>PLATFORMS</h3>
+                                    <div className="platforms-container">{detail[0].platforms.map(el => <h4 className="detail-info" key={el}>{el}</h4>)}</div>
+                                </div>
+                                <div className="data-field">
+                                    <h3>STORES</h3>
+                                    <div className="platforms-container">{detail[0].stores.map(el => <h4 className="detail-info" key={el}>{el}</h4>)}</div>
+                                </div>
+                                <div className="data-field">
+                                    <h3>GENRES</h3>
+                                    <div className="platforms-container">{detail[0].genres.map(el => <h4 className="detail-info" key={el}>{el}</h4>)}</div>
+                                </div>
+                                <div className="data-field">
+                                    <h3>RELEASE DATE</h3>
+                                    <h3 className="detail-info">{detail[0].released}</h3>
+                                </div>
+                                <div className="data-field">
+                                    <h3>RATING</h3>
+                                    <h3 className="detail-info">{detail[0].rating} / 5</h3>
+                                </div>
+                            </div>
+                                <button className="back-button" onClick={ e => handleBack(e)}>← Back</button>
+                        </div>
+                    </div> : <span className="loader"></span>
                 }
             </div>
     
