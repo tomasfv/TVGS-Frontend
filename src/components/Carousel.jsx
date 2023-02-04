@@ -3,7 +3,7 @@ import './Carousel.css'
 
 
 export default function Carousel({ slides }){
-  const [currentIndex, setCurrentIndex] = useState(6);
+  const [currentIndex, setCurrentIndex] = useState(slides.length-1);
   const goToPrevious = () => {
     const isFirstSlide = currentIndex === 0;
     const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
