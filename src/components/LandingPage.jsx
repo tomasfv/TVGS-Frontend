@@ -5,9 +5,10 @@ import { Link } from 'react-router-dom';
 export default function LandingPage(){
 
     return (
-        <div>
-            <h1>Welcome to</h1>
-            <h1>THE VIDEO GAMES SHELTER</h1>
+        <div className='landing-container'>
+            
+            <h1 className='landing-title'>THE VIDEO GAMES SHELTER</h1>
+            <h2 className='landing-subtitle'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem eaque accusamus nam officiis animi fugit, officia sed aut architecto nemo delectus ullam provident</h2>
             <Link to='/Home'>
                 <button className='start-landing'>START</button>
             </Link>

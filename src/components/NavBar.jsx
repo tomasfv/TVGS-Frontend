@@ -4,19 +4,20 @@ import './NavBar.css'
 
 export default function NavBar(){
     return (
-        <div className='navbar-container'>
+        <nav className='navbar-container'>
             <div className='logo-navbar'>
                 <Link to={'/Home'}>
                     <h1>TVGS</h1>
+                    {/* <img src='/Images/Destiny-1.jpg' alt=''></img> */}
                 </Link>
             </div>
-            <div className='pages-navbar'>
-                <h3 className='page-navbar'>Home</h3>
-                <h3 className='page-navbar'>Games</h3>
-                <h3 className='page-navbar'>News</h3>
-                <h3 className='page-navbar'>About</h3>
-                <h3 className='page-navbar'>Contact</h3>
-            </div>
-        </div>
+            <ul className='pages-navbar'>
+                <li><h3 className='page-navbar'>Home</h3></li>
+                <li><h3 className='page-navbar'>Games</h3></li>
+                <li><h3 className='page-navbar'>News</h3></li>
+                <li><h3 className='page-navbar'>About</h3></li>
+                <li><h3 className='page-navbar'>Contact</h3></li>
+            </ul>
+        </nav>
     )
 }

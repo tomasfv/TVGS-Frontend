@@ -36,7 +36,8 @@ export default function Gallery(){
     function handleReset(e){
         e.preventDefault();
         dispatch(getVideogames());
-        setCurrentPage(1)
+        setCurrentPage(1);
+        dispatch(filterByGenre('default'));
     }
 
     function handleNext(e){

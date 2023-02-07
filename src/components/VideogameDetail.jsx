@@ -54,6 +54,7 @@ export default function VideogameDetail(){
                                     <div className="data-field">
                                         <h3>WEBSITE</h3>
                                         <h3><a href={detail[0].website} target="_blank" rel="noreferrer" className="back-button">{detail[0].name}</a></h3>
+                                        <h3>ID: {detail[0].id}</h3>
                                     </div>
                                 </div>
                             </div>
