@@ -24,7 +24,7 @@ export function getMoreVideogames(){
 export function getVideogamesByName(name){
     return async function(dispatch){
         try{
-        var json = await axios.get('/videogames?name='+ name, {});
+        var json = await axios.get('/search?name='+ name, {});
         return dispatch({
             type: "GET_VIDEOGAMES_BY_NAME",
             payload: json.data
@@ -35,6 +35,21 @@ export function getVideogamesByName(name){
     }
     }
 }
+
+// export function getVideogamesByName(name){
+//     return async function(dispatch){
+//         try{
+//         var json = await axios.get(`/search?name=${name}`, {});
+//         return dispatch({
+//             type: "GET_VIDEOGAMES_BY_NAME",
+//             payload: json.data
+//         })
+//     } catch(error) {
+//         console.log(error);
+//         alert(`Video Game ${name} Not Found`)
+//     }
+//     }
+// }
 
 export function getGenres(){
     return async function(dispatch){

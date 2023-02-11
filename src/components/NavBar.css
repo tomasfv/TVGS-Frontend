@@ -15,9 +15,12 @@
 }
 
 .logo-navbar{
-    margin-right: 700px;
-    color: white;
+    margin-right: 800px;
+    margin-bottom: 170px;
+    height: 0px;
+    width: 0px;
     text-decoration: none;
+    
 }
 
 .pages-navbar{
