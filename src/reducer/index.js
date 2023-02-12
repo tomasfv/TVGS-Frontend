@@ -46,17 +46,23 @@ function rootReducer(state = initialState, action) {
                 detail: []
             }
         
-        case "FILTER_BY_GENRE":
-            const fullVideogames = state.videogames;
-            let resultApi = fullVideogames.filter(v => v.genres && v.genres.includes(action.payload))
-            let resultDb = fullVideogames.filter(v => v.genres && v.genres.map(g => g.name).includes(action.payload))
-            let result = resultApi.concat(resultDb)
+        // case "FILTER_BY_GENRE":
+        //     const fullVideogames = state.videogames;
+        //     let resultApi = fullVideogames.filter(v => v.genres && v.genres.includes(action.payload))
+        //     let resultDb = fullVideogames.filter(v => v.genres && v.genres.map(g => g.name).includes(action.payload))
+        //     let result = resultApi.concat(resultDb)
             
+        //     return{
+        //         ...state,
+        //         allVideogames: result
+        //     }
+
+        case "FILTER_BY_GENRE":
             return{
                 ...state,
-                allVideogames: result
+                allVideogames: action.payload
             }
-        
+            
         case "FILTER_BY_ORIGIN":
             const totalVideogames = state.videogames
             const originFilter = action.payload === 'created' ? 

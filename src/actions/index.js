@@ -36,6 +36,17 @@ export function getVideogamesByName(name){
     }
 }
 
+export function filterByGenre(name){
+    return async function(dispatch){
+        
+            var json = await axios.get('/genrefilter?name=' + name, {});
+            return dispatch({
+                type: "FILTER_BY_GENRE",
+                payload: json.data
+            })
+        
+    }
+}
 // export function getVideogamesByName(name){
 //     return async function(dispatch){
 //         try{
@@ -81,13 +92,14 @@ export function cleanDetail(){
     }
 }
 
-export function filterByGenre(payload){
+// export function filterByGenre(payload){
     
-    return{
-        type: "FILTER_BY_GENRE",
-        payload,
-    }
-}
+//     return{
+//         type: "FILTER_BY_GENRE",
+//         payload,
+//     }
+// }
+
 
 export function filterByOrigin(payload){
     return {

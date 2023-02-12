@@ -53,7 +53,7 @@ export default function VideogameDetail(){
                                     </div>
                                     <div className="data-field">
                                         <h3>WEBSITE</h3>
-                                        <h3><a href={detail[0].website} target="_blank" rel="noreferrer" className="back-button">{detail[0].name}</a></h3>
+                                        <h3><a href={detail[0].website? detail[0].website : 'https://colorlib.com/wp/wp-content/uploads/sites/2/404-error-template-3.png'} target="_blank" rel="noreferrer" className="back-button">{detail[0].name}</a></h3>
                                         <h3>ID: {detail[0].id}</h3>
                                     </div>
                                 </div>

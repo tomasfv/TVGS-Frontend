@@ -14,6 +14,13 @@ export default function SearchBar({setCurrentPage}){
 
     }
 
+    function handleEnter(e){
+        if (e.key === 'Enter') {
+            dispatch(getVideogamesByName(name));
+            setCurrentPage(1);
+          }
+    }
+
     function handleSubmit(e){
         e.preventDefault();
         if(!name){
@@ -30,7 +37,7 @@ export default function SearchBar({setCurrentPage}){
 
     return (
         <div className="search-container">
-            <input className='search-input' type = 'text' placeholder = 'search...' onChange={(e) => handleInputChange(e)}/>
+            <input className='search-input' type = 'text' placeholder = 'search title...' onChange={(e) => handleInputChange(e)} onKeyDown={(e) => handleEnter(e)}/>
             <button type = 'submit' className='search-button' onClick={(e) => { handleSubmit(e)}}>GO</button>
         </div>
     )

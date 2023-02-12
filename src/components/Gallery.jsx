@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getVideogames, getMoreVideogames, filterByOrigin, orderByName, orderByRating, getGenres, filterByGenre} from '../actions';
+import { getVideogames, getMoreVideogames, /*filterByOrigin,*/ orderByName, orderByRating, getGenres, filterByGenre} from '../actions';
 //import InfiniteScroll from 'react-infinite-scroll-component';
 import './Gallery.css'
 import { Link } from 'react-router-dom';
@@ -37,7 +37,6 @@ export default function Gallery(){
         e.preventDefault();
         dispatch(getVideogames());
         setCurrentPage(1);
-        dispatch(filterByGenre('default'));
     }
 
     function handleNext(e){
@@ -55,14 +54,17 @@ export default function Gallery(){
         dispatch(getMoreVideogames());
     }
 
-    function handleOriginFilter(e){
-        dispatch(filterByOrigin(e.target.value));
-        setCurrentPage(1);                          
-    }
+    // function handleOriginFilter(e){
+    //     dispatch(filterByOrigin(e.target.value));
+    //     setCurrentPage(1);                          
+    // }
 
     function handleGenreFilter(e){
         dispatch(filterByGenre(e.target.value));
-        setCurrentPage(1)
+        setTimeout(() => {
+            setCurrentPage(1);
+            
+        }, 500);
     }
 
     function handleSortName(e){
@@ -88,16 +90,16 @@ export default function Gallery(){
                 <h2>SORT</h2>
                 <div className='filt-container'>
                 <h4 className='filt-name'>Title</h4> 
-                <select className='filter' onChange={e => handleSortName(e)}>
-                    <option value='default'> - </option>
+                <select className='filter' value='default' onChange={e => handleSortName(e)}>
+                    <option value='default' disabled hidden> - </option>
                     <option value='asc'>A → Z</option>
                     <option value='desc'>Z → A</option>
                 </select>
                 </div>
                 <div className='filt-container'>
                 <h4 className='filt-name'>Rating</h4>
-                <select className='filter' onChange={ e => handleSortRating(e)}>
-                    <option value='default'> - </option>
+                <select className='filter' value='default' onChange={ e => handleSortRating(e)}>
+                    <option value='default' disabled hidden> - </option>
                     <option value='max'>+ RATING</option>
                     <option value='min'>- RATING</option>
                 </select>
@@ -105,21 +107,21 @@ export default function Gallery(){
                 
                 {/* Filters */}
                 <h2>FILTER</h2>
-                <div className='filt-container'>
+                {/* <div className='filt-container'>
                 <h4 className='filt-name'>Origin</h4>
-                <select className='filter' onChange={e => handleOriginFilter(e)}>
-                    <option value='default'> - </option>
+                <select className='filter' value='default' onChange={e => handleOriginFilter(e)}>
+                    <option value='default' disabled hidden> - </option>
                     <option value='all'>ALL</option>
                     <option value='created'>TVGS</option>
                     <option value='api'>RAWG</option> 
                 </select>
-                </div>
+                </div> */}
                 <div className='filt-container'>
-                <h4 className='filt-name'>Genre</h4> 
-                <select className='filter' onChange={e => handleGenreFilter(e)}>
-                    <option value='default'> - </option>
+                <h4 className='filt-name' >Genre</h4> 
+                <select className='filter' value='default' onChange={e => handleGenreFilter(e)}>
+                    <option value='default' disabled hidden> - </option>
                     {genres.map(el => (
-                        <option value={el.name} key={el.name}>{el.name.toUpperCase()}</option>
+                        <option value={el.name.toLowerCase()} key={el.name}>{el.name.toUpperCase()}</option>
                     ))}
 
                 </select>
