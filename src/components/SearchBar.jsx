@@ -28,8 +28,7 @@ export default function SearchBar({setCurrentPage}){
         }
         dispatch(getVideogamesByName(name));
         setTimeout(() => {
-            setCurrentPage(1);
-            
+            setCurrentPage(1);    
         }, 2500);
         
         
