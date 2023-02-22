@@ -41,8 +41,9 @@
 }
 
 .landing-subtitle{
-    width: 1000px;
+    max-width: 1000px;
     text-align: center;
     text-shadow: rgb(0, 0, 0) 0px 5px 15px;
 
 }
+
