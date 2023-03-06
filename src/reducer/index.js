@@ -124,6 +124,10 @@ function rootReducer(state = initialState, action) {
                             ...state,
                             allVideogames: sortedRating
                         }
+                    case "POST_USER":
+                        return{
+                            ...state,
+                        }
             
 
 

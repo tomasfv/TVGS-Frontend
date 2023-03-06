@@ -86,6 +86,13 @@ export function getDetail(id){
     }
 }
 
+export function postUser(payload){
+    return async function(dispatch){
+        const response = await axios.post("/user", payload);
+        return response;
+    }
+}
+
 export function cleanDetail(){
     return {
         type: "CLEAN_DETAIL"
