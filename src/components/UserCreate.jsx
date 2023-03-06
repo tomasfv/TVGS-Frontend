@@ -46,14 +46,14 @@ export default function UserCreate(){
     
     return (
         <div className="usercreate-container">
-            <h1>USER CREATION</h1>
+            <h1>LOGIN</h1>
 
-            <form onSubmit={(e) => handleSubmit(e)}>
+            <form className="usercreate-form" onSubmit={(e) => handleSubmit(e)}>
                 <label><h3>Email </h3></label>
                 <input type='text' value={input.email} name='email' placeholder="email..." onChange={(e) => handleChange(e)}/>
                 <label><h3>Password </h3></label>
                 <input type='text' value={input.password} name='password' placeholder="password..." onChange={(e) => handleChange(e)}/>
-                <button type='submit'>CREATE</button>
+                <button type='submit'className="usercreate-btn">Login</button>
             </form>
         </div>
     )

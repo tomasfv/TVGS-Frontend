@@ -15,7 +15,7 @@
 }
 
 .logo-navbar{
-    margin-right: 800px;
+    margin-right: 700px;
     margin-bottom: 170px;
     height: 0px;
     width: 0px;
@@ -33,4 +33,10 @@
 .page-navbar{
     margin: 10px;
     font-weight:bolder;
+}
+
+.login-navbar{
+    margin: 20px;
+    margin-top: 0px;
+   
 }

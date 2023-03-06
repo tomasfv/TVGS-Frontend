@@ -1,0 +1,24 @@
+.usercreate-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.usercreate-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    background-color: rgb(44, 44, 44);
+    border-radius: 2px;
+}
+
+.usercreate-btn{
+    background-color: rgb(238, 238, 238);
+    color: black;
+    font-weight: bolder;
+    margin-top: 30px;
+    border-radius: 5px;
+}
